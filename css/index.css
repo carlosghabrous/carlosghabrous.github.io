@@ -1,0 +1,28 @@
+h1 {
+    font-size: 60px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+}
+
+li {
+    float: right; 
+}
+
+a {
+    display: block;
+    padding: 8px; 
+    background-color: #FFFFFF;
+}
+
+.main-font {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center; 
+}
+
+.active {
+    background-color: #4CAF50;
+}
