@@ -1,29 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
+    <meta charset="UTF-8">
     <title>Carlos Ghabrous Larrea</title>
     <link rel="stylesheet" href="css/index.css">
   </head>
 
   <body>
-    <div>
-      <ul class="main-font">
-        <li><a href="#Home">Home</a></li>
-        <li><a href="/cv">CV</a></li>
-        <li><a href="github.com/carlosghabrous/">Projects</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+    <header>
+      <!-- <div class="logo">
+        <img src="img/profile.jpg" alt="">
+      </div> -->
+      <!-- <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button> -->
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+          <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
+          <li class="nav__item"><a class="nav__link" href="#projects">Projects</a></li>
+          <li class="nav__item"><a class="nav__link" href="/cv">CV</a></li>
+          <li class="nav__item"><a class="nav__link" href="/blog">Blog</a></li>
+        </ul>
+      </nav>
+
+    </header>
+    
+    <!-- Introduction -->
+    <section class="intro" id="home">
+      <h1 class="section__title section__title--intro">
+        Hi, I am Carlos!
+      </h1>
+      <p class="section__subtitle section__subtitle--intro">
+        Creating and fixing bugs since 2010
+      </p>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <h2 class="section__title section__title--about">Who I am</h2>
+      <p class="section__subtitle section__subtitle--about">
+          kjadkj  a;kasdf ;kasdfk;j as;fj as;dkfj ask;df;lj saf;kj asdf
+      </p>
+      <div class="about__body">
+        <p>jkadfj  sdfdf sdfljsdfk jasdf</p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="my-projects" id="projects">
+      <h2 class="section__title">Projects</h2>
+      <p class="section__subtitle"></p>
+
+      <!-- Portfolio item #01 -->
+      <div class="portfolio">
+        <a href="#" class="portfolio__item">
+          <img src="" alt="" class="">
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <a href="mailto:carlos.ghabrous@gmail.com" class="footer__link">carlos.ghabrous@gmail.com</a>
+      <ul class="social-list">
+        <li class="social-list__item"><a class="social-list__link" href="github.com/carlosghabrous">github</a></li>
       </ul>
-    </div>
-
-    <br>
-
-    <div>
-      <h1 class="main-font">Hi, I'm Carlos!</h1>
-      <h2 class="main-font">Software Engineer, wannabe drummer and out-of-shape triathlete</h2>
-    </div>
-
+    </footer>
+        
   </body>
 </html>
