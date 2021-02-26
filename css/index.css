@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
+/* Custom properties */
+
 :root {
     --ff-primary: 'Courier New', Courier;
-    --ff-secondary: 'Courier New', monospace;
+    --ff-secondary: 'Source Code Pro', monospace;
 
     --fw-reg: 300;
     --fw-bold: 900;
@@ -19,11 +21,26 @@
     --fs-h2: 2.25rem; 
     --fs-h3: 1.25rem; 
     --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rbga(0,0,0,.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
+
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem; 
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
 
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     background: var(--clr-light);
@@ -43,7 +60,14 @@ img {
     max-width: 100%;
 }
 
+strong {
+    font-weight: var(--fw-bold);
+}
+
+
 /* Typography */
+
+
 h1,
 h2,
 h3 {
@@ -51,17 +75,20 @@ h3 {
     margin: 0;
 }
 
-h1 { font-size: var(--fs-h1)}
-h2 { font-size: var(--fs-h2)}
-h3 { font-size: var(--fs-h3)}
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) } 
 
-/* .section__title {
-
-} */
+.section__title {
+    margin-bottom: .25em;
+} 
 
 .section__title--intro {
     font-weight: var(--fw-reg);
-    margin-bottom: 1rem;
+}
+
+.section__title--intro strong {
+    display: block;
 }
 
 .section__subtitle {
@@ -69,15 +96,146 @@ h3 { font-size: var(--fs-h3)}
     font-size: var(--fs-h3);
 }
 
+
 .section__subtitle--intro,
 .section__subtitle--about {
     background: var(--clr-accent);
     font-family: var(--ff-secondary);
+    padding: .25em 1em;
+    margin-bottom: 1em; 
+}
+
+
+/* Intro section */
+
+.intro {
+    position: relative; 
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+.section__subtitle--intro {
+    display: inline-block;
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid; 
+        width: min-content;
+        margin: 0 auto; 
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative; 
+        z-index: 2; 
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative; 
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid; 
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+    }
+
+    .section__title--about {
+        grid-area: title;
+    }
+
+    .section__subtitle--about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+    }
+
+    .about-me__img {
+        grid-area: img; 
+        position: relative; 
+        z-index: 2;
+    }
+}
+
+/* My Projects */
+.my-projects {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__subtitle--projects {
+    background-color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 1em;
+}
+
+.portfolio {
+    display: grid; 
+    grid-template-columns: repeat(autofit, minmax(300px, 1fr));
+}
+
+.portfolio__item {
+    background: var(--clr-accent);
+    overflow: hidden; 
+}
+
+.portfolio__img {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
+}
+
+
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: .5;
+
 }
 
 /* header */
 
-header {
+/* header {
     display: flex;
     justify-content: space-between;
     padding: 1em;
@@ -99,9 +257,9 @@ header {
 
     transform: translateX(100%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
-}
+} */
 
-.nav__list {
+/* .nav__list {
     list-style-type: none;
     display: flex;
     height: 100%;
@@ -132,14 +290,13 @@ header {
     right: 1em;
     top: 1em;
     z-index: 1000;
-}
+} */
 
-.nav-open .nav {
+/* .nav-open .nav {
     transform: translateX(0);
 }
 
 .nav-open .nav-toggle {
     position: fixed; 
-}
-
+} */
 
