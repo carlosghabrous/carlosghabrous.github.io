@@ -227,7 +227,6 @@ header {
 
 /* My Projects */
 .my-projects {
-    background-color: var(--clr-dark);
     color: var(--clr-light);
     text-align: center;
 }
@@ -269,7 +268,6 @@ header {
 
 /* footer */
 .footer {
-    background: #111;
     color: var(--clr-accent);
     text-align: center;
     padding: 2.5em 0;
