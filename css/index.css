@@ -234,7 +234,7 @@ h3 { font-size: var(--fs-h3) }
 }
 
 /* footer */
-/* .footer {
+.footer {
     background: #111;
     color: var(--clr-accent);
     text-align: center;
@@ -243,7 +243,7 @@ h3 { font-size: var(--fs-h3) }
 
 .footer a {
     color: inherit;
-} */
+}
 
 /* header */
 
