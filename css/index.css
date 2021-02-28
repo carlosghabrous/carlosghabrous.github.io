@@ -99,7 +99,7 @@ header {
 
 .nav {
     position: absolute;
-    right: 0;
+    right: 3em;
 } 
 
 .nav__list {
@@ -272,11 +272,10 @@ header {
 }
 
 .to-top-arrow {
-    justify-content: center;
     color: var(--clr-accent);
 }
 
-.to-top-arrow hover {
+.to-top-arrow:hover {
     color: var(--clr-dark);
 }
 
