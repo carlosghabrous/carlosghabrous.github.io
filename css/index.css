@@ -271,4 +271,13 @@ header {
     padding: .5em;
 }
 
+.to-top-arrow {
+    justify-content: center;
+    color: var(--clr-accent);
+}
+
+.to-top-arrow hover {
+    color: var(--clr-dark);
+}
+
 
