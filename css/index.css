@@ -42,7 +42,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/*
+
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -69,12 +69,12 @@ hr {
     opacity: 0.5;
     position: relative;
     bottom: 3em;
-} */
+}
 
 /* Typography */
 
 
-/* h1,
+h1,
 h2,
 h3 {
     line-height: 1.1;
@@ -92,7 +92,7 @@ h3 { font-size: var(--fs-h3) }
 .section__subtitle {
     margin: 0;
     font-size: var(--fs-h3);
-} */
+}
 
 
 /* header */
