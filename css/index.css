@@ -73,7 +73,6 @@ hr {
 
 /* Typography */
 
-
 h1,
 h2,
 h3 {
@@ -95,7 +94,7 @@ h3 { font-size: var(--fs-h3) }
 }
 
 
-/* header */
+/* Header */
 
 header {
     display: flex;
@@ -132,11 +131,7 @@ header {
 
 /* Intro section */
 
-/* TODO: remove  */
-.about-me__picture {
-    background-color: var(--clr-accent);
-}
-/* .section__title--intro {
+.section__title--intro {
     font-weight: var(--fw-reg);
     text-align: center;
 }
@@ -146,12 +141,11 @@ header {
     text-align: center;
 }
 
-
 .intro {
     position: relative; 
-} */
+}
 
-/* ABOUT ME */
+/* About me */
 
 /* .about-me {
     max-width: 1000px;
