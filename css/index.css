@@ -1,4 +1,4 @@
-*,
+/* *,
 *::before,
 *::after {
     box-sizing: border-box;
@@ -57,13 +57,18 @@ section {
 
 img {
     display: block;
-    max-width: 100%;
+    max-width: 50%;
 }
 
 strong {
     font-weight: var(--fw-bold);
 }
 
+hr {
+    opacity: 0.5;
+    position: relative;
+    bottom: 3em;
+}
 
 /* Typography */
 
@@ -279,4 +284,4 @@ header {
     color: var(--clr-dark);
 }
 
-
+ */
