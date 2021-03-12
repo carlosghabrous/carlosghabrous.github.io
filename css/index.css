@@ -132,6 +132,10 @@ header {
 
 /* Intro section */
 
+/* TODO: remove  */
+.about-me__picture {
+    background-color: var(--clr-accent);
+}
 /* .section__title--intro {
     font-weight: var(--fw-reg);
     text-align: center;
