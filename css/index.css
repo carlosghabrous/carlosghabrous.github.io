@@ -16,7 +16,7 @@
 
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #1b7b9b;
+    --clr-accent: #3bbbe6;
 
     --fs-h1: 3rem; 
     --fs-h2: 2.25rem; 
@@ -216,9 +216,20 @@ header {
 }
 
 /* TODO: remove this one */
-.portfolio__div {
+.portfolio__div1 {
     background-color: blue;
-    width: 25%;
+    color: yellow;
+    width: auto;
+}
+.portfolio__div2 {
+    background-color: green;
+    color: yellow;
+    width: auto;
+}
+.portfolio__div3 {
+    background-color: gray;
+    color: yellow;
+    width: auto;
 }
 /* .portfolio__item {
     background: var(--clr-accent);
@@ -289,7 +300,6 @@ header {
 
 .to-top-arrow {
     color: var(--clr-dark);
-    justify-content: center;
 }
 
 .to-top-arrow:hover {
