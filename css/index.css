@@ -97,7 +97,6 @@ footer {
     font-size: var(--fs-h3);
     padding: .25em 1em;
     margin-bottom: 1em;
-    background-color: var(--clr-accent);
 }
 
 
@@ -161,12 +160,14 @@ header {
 
 .section__subtitle--about {
     font-family: var(--ff-secondary);
+    background-color: var(--clr-accent);
 }
 
 @media (min-width: 600px) {
     .about-me {
         display: grid; 
-        grid-template-columns: 1fr 300px;
+        grid-column-gap: 2em;
+        grid-template-columns: 1.25fr 0.75fr;
         grid-template-areas: 
             "title title"
             "subtitle subtitle"
@@ -205,6 +206,7 @@ header {
 
 .section__subtitle--projects {
     font-family: var(--ff-secondary);
+    background-color: var(--clr-accent);
 }
 
 /*
@@ -246,6 +248,7 @@ header {
 
 .section__subtitle--contact-me {
     font-family: var(--ff-secondary);
+    background-color: var(--clr-accent);
 }
 
 .footer a {
@@ -280,9 +283,10 @@ header {
 }
 
 .to-top-arrow {
-    color: var(--clr-accent);
+    color: var(--clr-dark);
+    text-align: center;
 }
 
 .to-top-arrow:hover {
-    color: var(--clr-dark);
+    color: var(--clr-accent);
 }
