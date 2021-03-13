@@ -212,48 +212,31 @@ header {
 
 .portfolio {
     display: grid; 
-    grid-template-columns: repeat(autofit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* TODO: remove this one */
-.portfolio__div1 {
-    background-color: blue;
-    color: yellow;
-    width: auto;
-}
-.portfolio__div2 {
-    background-color: green;
-    color: yellow;
-    width: auto;
-}
-.portfolio__div3 {
-    background-color: gray;
-    color: yellow;
-    width: auto;
-}
-/* .portfolio__item {
+.portfolio__item {
     background: var(--clr-accent);
     overflow: hidden; 
 }
 
 .portfolio__img {
     transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
-    opacity 250ms linear;
-} */
+    /* opacity: 250ms linear; */
+}
 
-
-/* .portfolio__item:focus {
+.portfolio__item:focus {
     position: relative;
     z-index: 2;
-} */
+}
 
-
-/* .portfolio__img:hover,
-.portfolio__item:focus .portfolio__img {
+.portfolio__img:hover,
+.portfolio__item:focus 
+.portfolio__img {
     transform: scale(1.2);
     opacity: .5;
 
-}  */
+} 
 
 /* footer */
 .footer {
