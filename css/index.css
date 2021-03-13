@@ -209,13 +209,18 @@ header {
     background-color: var(--clr-accent);
 }
 
-/*
+
 .portfolio {
     display: grid; 
     grid-template-columns: repeat(autofit, minmax(300px, 1fr));
 }
 
-.portfolio__item {
+/* TODO: remove this one */
+.portfolio__div {
+    background-color: blue;
+    width: 25%;
+}
+/* .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden; 
 }
@@ -223,21 +228,21 @@ header {
 .portfolio__img {
     transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
     opacity 250ms linear;
-}
+} */
 
 
-.portfolio__item:focus {
+/* .portfolio__item:focus {
     position: relative;
     z-index: 2;
-}
+} */
 
 
-.portfolio__img:hover,
+/* .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
     transform: scale(1.2);
     opacity: .5;
 
-} */
+}  */
 
 /* footer */
 .footer {
@@ -284,7 +289,7 @@ header {
 
 .to-top-arrow {
     color: var(--clr-dark);
-    text-align: center;
+    justify-content: center;
 }
 
 .to-top-arrow:hover {
