@@ -84,6 +84,10 @@ h1 { font-size: var(--fs-h1) }
 h2 { font-size: var(--fs-h2) }
 h3 { font-size: var(--fs-h3) } 
 
+footer {
+    text-align: center;
+}
+
 .section__title {
     margin-bottom: .25em;
 } 
@@ -91,6 +95,9 @@ h3 { font-size: var(--fs-h3) }
 .section__subtitle {
     margin: 0;
     font-size: var(--fs-h3);
+    padding: .25em 1em;
+    margin-bottom: 1em;
+    background-color: var(--clr-accent);
 }
 
 
@@ -147,29 +154,22 @@ header {
 
 /* About me */
 
-/* .about-me {
-    max-width: 1000px;
-    margin: 0 auto; 
+.about-me {
+    max-width: 1200px;
+    margin: 0; 
 }
 
 .section__subtitle--about {
-    background: var(--clr-accent);
     font-family: var(--ff-secondary);
-    padding: .25em 1em;
-    margin-bottom: 1em; 
-}
-
-.about-me__img {
-    box-shadow: var(--bs);
 }
 
 @media (min-width: 600px) {
     .about-me {
         display: grid; 
-        grid-template-columns: 1fr 200px;
+        grid-template-columns: 1fr 300px;
         grid-template-areas: 
-            "title img"
-            "subtitle img"
+            "title title"
+            "subtitle subtitle"
             "text img";
     }
 
@@ -181,8 +181,8 @@ header {
         grid-column: 1 / -1;
         grid-row: 2;
         position: relative;
-        left: -1em;
-        width: calc(100% + 2em);
+        left: 0em;
+        width: calc(100%);
         padding-left: 1em;
         padding-right: calc(200px + 4em);
     }
@@ -190,23 +190,24 @@ header {
     .about-me__img {
         grid-area: img; 
         position: relative; 
-        z-index: 2;
+        background: pink;
+        
     }
-} */
+}
 
 /* My Projects */
-/* .my-projects {
+.my-projects {
     color: var(--clr-dark);
-    text-align: center;
+    max-width: 1200px;
+    margin: 0;
 }
 
 
 .section__subtitle--projects {
-    background-color: var(--clr-accent);
-    font-weight: var(--fw-bold);
-    margin-bottom: 1em;
+    font-family: var(--ff-secondary);
 }
 
+/*
 .portfolio {
     display: grid; 
     grid-template-columns: repeat(autofit, minmax(300px, 1fr));
@@ -237,11 +238,14 @@ header {
 } */
 
 /* footer */
-/* .footer {
-    color: var(--clr-accent);
-    text-align: center;
-    padding: 2.5em 0;
-    font-size: var(--fs-h3);
+.footer {
+    color: var(--clr-dark);
+    max-width: 1200px;
+    margin: 0;
+}
+
+.section__subtitle--contact-me {
+    font-family: var(--ff-secondary);
 }
 
 .footer a {
@@ -281,4 +285,4 @@ header {
 
 .to-top-arrow:hover {
     color: var(--clr-dark);
-} */
+}
