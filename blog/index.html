@@ -7,17 +7,15 @@ title: Ghab's blog
   <ul class="latest-posts__list">
 
     {% for post in site.posts %}
-      <li class="latest-posts__item">
-        <p class="latest-posts__date">{{ post.date | date_to_string}}</p>
-        <a class="latest-posts__link" href="{{ post.url }}">{{ post.title }}</a>
-        
-        {{ post.excerpt }}
-        
-        {% if post.excerpt != post.content %}
-          <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
-        {% endif %}
+    <li class="latest-posts__item">
+    <p class="latest-posts__date">{{ post.date | date_to_string}}</p>
+    <a class="latest-posts__link" href="{{ post.url }}">{{ post.title }}</a>
+    {{ post.excerpt }}
+    {% if post.excerpt != post.content %}
+      <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+    {% endif %}
 
-      </li>
+    </li>
     {% endfor %}
 
   </ul>
