@@ -3,8 +3,8 @@ layout: default
 title: Ghab's blog
 ---
 <section class="blog">
-  <h2 class="section__title section__title--latest-posts">Latest Post</h2>
-  <ul class="latest-posts__item">
+  <h2 class="section__title section__title--latest-posts">Latest Posts</h2>
+  <ul class="latest-posts__list">
     {% for post in site.posts %}
       <li class="latest-posts__item">
         <a class="latest-posts__link" href="{{ post.url }}">{{ post.title }}</a>
