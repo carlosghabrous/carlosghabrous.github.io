@@ -299,12 +299,16 @@ header {
     justify-content: space-evenly;
 }
 
+.latest-posts__date {
+    font-size: var(--fs-h3);
+}
+
 .latest-posts__link {
     font-size: var(--fs-post-title);
     color: var(--clr-accent);
     text-decoration: none;
     margin: 0;
-    padding: .25em 1em;
+    padding: .25em 0em;
 }
 
 .latest-posts__link:hover {
