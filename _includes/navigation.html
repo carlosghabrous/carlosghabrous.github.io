@@ -7,10 +7,12 @@
       <li class="nav__item"><a class="nav__link" href="https://carlosghabrous.github.com/blog">Blog</a></li>
     </ul> -->
     {% for item in site.data.navigation %}
+    <ul class="nav__list">
       <li class="nav__item">
         <a class="nav__link" href="{{ item.link }}">
         {{ item.name }}
         </a>
       </li>
+    </ul>
     {% endfor %}
   </nav>
