@@ -5,13 +5,15 @@ title: Ghab's blog
 <section class="blog">
   <h2 class="section__title section__title--latest-posts">Latest Posts</h2>
   <ul class="latest-posts__list">
+
     {% for post in site.posts %}
       <li class="latest-posts__item">
-        <a class="latest-posts__link" href="{{ post.url }}">{{ post.title }}</a>
+        <a class="latest-posts__link" href="{{ post.url }}">{{ post.title }} - {{ post.date | date_to_string}}</a>
           <p class="latest-posts__excerpt">
           {{ post.excerpt }}
           </p>
       </li>
     {% endfor %}
+
   </ul>
 </section>
