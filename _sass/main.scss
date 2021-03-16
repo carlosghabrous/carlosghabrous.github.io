@@ -299,7 +299,9 @@ header {
     justify-content: space-evenly;
 }
 
-.latest-posts__date {
+
+.latest-posts__date,
+.blog_post--meta  {
     font-weight: var(--fw-bold);
     font-size: var(--fs-h3);
     margin: 0;
@@ -320,5 +322,6 @@ header {
     font-family: var(--ff-secondary);
     background-color: var(--clr-accent);
 }
+
 
 
