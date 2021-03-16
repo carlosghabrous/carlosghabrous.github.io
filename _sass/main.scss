@@ -301,14 +301,14 @@ header {
 
 .latest-posts__link {
     font-size: var(--fs-post-title);
-    background-color: var(--clr-accent);
+    color: var(--clr-accent);
     text-decoration: none;
     margin: 0;
     padding: .25em 1em;
 }
 
 .latest-posts__link:hover {
-    color: var(--clr-accent);
+    color: var(--clr-dark);
 }
 
 .section__subtitle--post {
