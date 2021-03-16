@@ -224,8 +224,11 @@ header {
 }
 
 .portfolio__img {
-    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
-    /* opacity: 250ms linear; */
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1);
+    min-width: 100%;
+    min-height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .portfolio__item:focus {
