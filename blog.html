@@ -8,7 +8,9 @@ title: Ghab's blog
     {% for post in site.posts %}
       <li class="latest-posts__item">
         <a class="latest-posts__link" href="{{ post.url }}">{{ post.title }}</a>
-        {{ post.excerpt }}
+          <p class="latest-posts__excerpt">
+          {{ post.excerpt }}
+          </p>
       </li>
     {% endfor %}
   </ul>
