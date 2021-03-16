@@ -1,0 +1,14 @@
+- name: Home
+  link: https://carlosghabrous.github.com
+
+- name: About
+  link: https://carlosghabrous.github.com/#about
+
+- name: Projects
+  link: https://carlosghabrous.github.com/#projects
+
+- name: CV
+  link: https://carlosghabrous.github.com/cv
+
+- name: Blog
+  link: https://carlosghabrous.github.com/blog
