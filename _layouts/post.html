@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
-<h2 class="section__title">{{ page.title }}</h2>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+<section class="blog_post">
+    <h2 class="section__title">{{ page.title }}</h2>
+    <p class="blog_post--meta">{{ page.date | date_to_string }} - {{ page.author }}</p>
+</section>
 
 {{ content }}

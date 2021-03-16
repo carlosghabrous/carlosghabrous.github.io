@@ -309,12 +309,20 @@ header {
 // } 
 
 .latest-posts__link {
-    color: inherit;
+    // color: inherit;
+    font-size: var(--fs-h3);
     font-weight: var(--fw-bold);
     text-decoration: none;
-    margin: .5em;
+    margin: 0;
+    padding: .25em 1em;
+    // margin-bottom: 1em;
 }
 
 .latest-posts__link:hover {
     color: var(--clr-accent);
 }
+
+/* Blog post */
+// .blog_post--meta {
+
+// }
