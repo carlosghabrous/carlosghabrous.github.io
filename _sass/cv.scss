@@ -1,0 +1,21 @@
+body {
+    scroll-behavior: smooth;
+    background: pink;
+}
+
+.cv-container {
+    display: grid;
+    grid-template-columns: 1fr, 2fr;
+}
+
+.side-bar {
+    background: pink;
+}
+
+.experience-achievements {
+    background: blue;
+}
+
+.personal-projects {
+    background: green;
+}
