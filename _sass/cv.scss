@@ -5,17 +5,23 @@ body {
 
 .cv-container {
     display: grid;
-    grid-template-columns: 1fr, 2fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+        "side-bar experience",
+        "side-bar personal";
 }
 
 .side-bar {
     background: pink;
+    grid-area: "side-bar";
 }
 
 .experience-achievements {
     background: blue;
+    grid-area: "experience";
 }
 
 .personal-projects {
     background: green;
+    grid-area: "personal";
 }
