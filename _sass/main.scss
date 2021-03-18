@@ -223,41 +223,21 @@ header {
     overflow: hidden; 
 }
 
-
-/* from here is new */
-.portfolio__item-new {
-    position: relative;
-}
-
-.overlay {
+.portfolio__text { // new
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
 }
 
-.container:hover .overlay {
-    opacity: 1;
-}
-  
-.text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-/* new ends here */
 
 .portfolio__img {
     transition: transform 750ms cubic-bezier(.5, 0, .5, 1);
@@ -274,10 +254,12 @@ header {
 }
 
 .portfolio__img:hover,
-.portfolio__item:focus 
-.portfolio__img {
+.portfolio__item:focus,
+.portfolio__img,
+.portfolio__text{ // new
     transform: scale(1.2);
     opacity: .5;
+    visibility: visible; // new
 
 } 
 
