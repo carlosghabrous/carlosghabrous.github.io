@@ -6,7 +6,10 @@
 
 :root {
     --ff-primary: 'Courier New', Courier;
-    
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+  
     --fc-side_bar: white;
     --fc-side_bar--title: white;
     --fc-side_bar--subtitle: gray; 
@@ -20,6 +23,11 @@ body {
     scroll-behavior: smooth;
 }
 
+section {
+  padding: 5px;
+  margin:  0;
+}
+
 .cv-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -31,7 +39,16 @@ body {
 .side-bar {
     background: var(--clr-side_bar);
     font-family: var(--ff-primary);
+    color: var(--fc-side_bar);
     grid-area: "side-bar";
+  
+  display:  flex;
+  flex-direction:  column;
+}
+
+.side__bar--item--title,
+side__bar--item--subtitle {
+  font-weight: var(--fw-bold);
 }
 
 .experience-achievements {
