@@ -255,18 +255,6 @@ header {
     opacity: 1;
 }
 
-// .portfolio__item:focus {
-//     position: relative;
-//     z-index: 2;
-// }
-
-// .portfolio__img:hover,
-// .portfolio__item:focus
-// .portfolio__img {
-//     transform: scale(1.2);
-//     opacity: .5;
-// } 
-
 
 /* footer */
 .footer {
@@ -287,6 +275,7 @@ header {
 
 .footer__link {
     font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
 }
 
 .footer__link:hover,
