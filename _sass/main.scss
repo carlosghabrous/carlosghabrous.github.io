@@ -219,6 +219,7 @@ header {
 }
 
 .portfolio__item {
+    position: relative;
     background: var(--clr-accent);
     overflow: hidden; 
 }
@@ -232,17 +233,37 @@ header {
     position: relative;
 }
 
-.portfolio__item:focus {
-    position: relative;
-    z-index: 2;
+.portfolio__text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 106, 154, 0.72);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
 }
 
-.portfolio__img:hover,
-.portfolio__item:focus
-.portfolio__img {
-    transform: scale(1.2);
-    opacity: .5;
-} 
+.portfolio__item:hover .portfolio__text {
+    visibility: visible;
+    opacity: 1;
+}
+
+// .portfolio__item:focus {
+//     position: relative;
+//     z-index: 2;
+// }
+
+// .portfolio__img:hover,
+// .portfolio__item:focus
+// .portfolio__img {
+//     transform: scale(1.2);
+//     opacity: .5;
+// } 
 
 
 /* footer */
