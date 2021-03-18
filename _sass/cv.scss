@@ -1,6 +1,23 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primary: 'Courier New', Courier;
+    
+    --fc-side_bar: white;
+    --fc-side_bar--title: white;
+    --fc-side_bar--subtitle: gray; 
+    --fc-side_bar--skill: black; 
+    --fc-right_side: black; 
+
+    --clr-side_bar: rgb(7, 86, 160);
+}
+
 body {
     scroll-behavior: smooth;
-    background: pink;
 }
 
 .cv-container {
@@ -12,7 +29,8 @@ body {
 }
 
 .side-bar {
-    background: rgb(7, 86, 160);
+    background: var(--clr-side_bar);
+    font-family: var(--ff-primary);
     grid-area: "side-bar";
 }
 
