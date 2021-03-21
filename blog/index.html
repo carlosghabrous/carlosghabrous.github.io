@@ -6,10 +6,9 @@ title: Why doesn't it work???
   <h2 class="section__title section__title--latest-posts">Latest Posts</h2>
   <ul class="latest-posts__list">
 
-    {% assign i = 0 %}
     {% for post in site.posts %}
 
-      {% if i < 3 %}
+      {% if forloop.index < 3 %}
         <li class="latest-posts__item">
           <p class="latest-posts__date">{{ post.date | date_to_string}}</p>
           <a class="latest-posts__link" href="{{ post.url }}">{{ post.title }}</a>
@@ -23,7 +22,6 @@ title: Why doesn't it work???
 
         </li>
       {% endif %}
-      {% increment i %}
     {% endfor %}
 
   </ul>
