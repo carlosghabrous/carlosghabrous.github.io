@@ -10,6 +10,7 @@
     /*TODO: Have a look to other fonts for regular text */
     --ff-primary: 'Courier New', Courier;
     --ff-secondary: 'Source Code Pro', monospace;
+    --ff-posts: 'Helvetica';
 
     --fw-reg: 300;
     --fw-bold: 900;
@@ -341,8 +342,8 @@ header {
 }
 
 .section__subtitle--post {
-    font-family: var(--ff-secondary);
-    background-color: var(--clr-accent);
+    font-family: var(--ff-posts);
+    background-color: var(--clr-dark);
 }
 
 
