@@ -2,6 +2,7 @@
 layout: post
 title: The importance of tiny details
 tags: [job search, python, pep8, formatting]
+author: carlos
 ---
 
 I recently applied for a job at a company in Spain whose name I will not mention. After making the HR cut, they assigned to me some homework that I was supposed to complete in one week, give or take. The requirements for the job were the following: 
@@ -49,7 +50,7 @@ OK, I agree with the second didn’t like, which I would say it is the most impo
 But I honestly didn’t expect the coding style. I didn’t use a formatting tool this time, but since I am familiar with PEP8, it didn’t cross my mind style would be a problem. 
 Now, I know that I don’t follow PEP8 100%, and I do things like this: 
 
-```python
+{% highlight python %}
 from rest_framework             import viewsets
 
 from django.core                import serializers as core_serializers
@@ -62,19 +63,19 @@ from django.shortcuts           import render
 
 from .                          import models, serializers, utils
 from .forms                     import SelectDsrsFileForm
-```
+{% endhighlight %}
 
 See how everything is aligned around the “import” keyword? To me, this not only looks nicer, but improves readability. The same happens if some variables are defined one after the other, like:  
 
-```python
+{% highlight python %}
 form_class  = self.get_form_class()
 form        = self.get_form(form_class)
 files       = request.FILES.getlist(‘dsr_files’)
-```
+{% endhighligh %}
 
 Just out of curiosity, I used VS Editor and autopep8 on this file, and after the formatter did its job, the previous lines looked like this: 
 
-```python
+{% highlight python %}
  from rest_framework import viewsets
 
 from django.core import serializers as core_serializers
@@ -92,9 +93,9 @@ from .forms import SelectDsrsFileForm
 form_class = SelectDsrsFileForm
 template_name = 'dsrs/upload-dsrs.html'
 success_url = 'success/'
-```
+{% endhighligh %}
 
-As one could expect, nothing dramatically different from one example to the next one. But even they claimed “We'll never reject a candidate for this, but these tiny details help us to see how we worked with Python before.”, it seems a bit suspicious that they mentioned it at all. 
+As one could expect, nothing dramatically different from one example to the next one. But even they claimed “We'll never reject a candidate for this, but these tiny details help us to see how we worked with Python before.”, it seems a bit suspicious that they mentioned it at all. In any case, kudos to the company for replying to my questions and explaining why they decided to not move forward: in my experience, most people won't bother on explaining anything, and these guys prove not to be hearless robots but human beings, even if they gave me the finger. 
 
 Conclusion: don’t think and use the tools, they are there for a reason. That, and that my aesthetics sense suck and should never he trusted. 
 
