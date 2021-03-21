@@ -11,10 +11,12 @@ title: Why doesn't it work???
       <li class="latest-posts__item">
         <p class="latest-posts__date">{{ post.date | date_to_string}}</p>
         <a class="latest-posts__link" href="{{ post.url }}">{{ post.title }}</a>
-        {{ post.excerpt }}
-        {% if post.excerpt != post.content %}
-          <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
-        {% endif %}
+        <section class="section__subtitle--post">
+          {{ post.excerpt }}
+          {% if post.excerpt != post.content %}
+            <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+          {% endif %}
+        </section>
 
     </li>
     {% endfor %}
