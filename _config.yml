@@ -1,5 +1,7 @@
 comments: true 
 
+google_analytics: "G-DXWEJDYSTQ"
+
 defaults:
   -
     scope:
