@@ -1,29 +1,3 @@
-social-network-links:
-  email: "carlos.ghabrous@gmail.com"
-  github: carlosghabrous
-  linkedin: carlosghabrous
-
-
-# Select which social network share links to show in posts
-share-links-active:
-  linkedin: true
-  github: true
-
-# Whether or not to show a list of tags below each post preview in the feed page
-feed_show_tags: true
-
-# Output options (more information on Jekyll's site)
-markdown: kramdown
-highlighter: rouge
-permalink: /:year-:month-:day-:title/
-paginate: 5
-
-kramdown:
-  input: GFM
-  auto_ids: true
-  syntax_highlighter: rouge
-
-
 defaults:
   -
     scope:
@@ -34,7 +8,4 @@ defaults:
       layout: "post"
       comments: true  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
-
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+      
