@@ -1,8 +1,11 @@
-# defaults:
-#   - 
-#   scope: 
-#     path: "blog/_posts"
-#     type: "posts"
-#   values: 
-#     layout: "post"
-#     author: "carlos"
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      author: "carlos"
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+      
