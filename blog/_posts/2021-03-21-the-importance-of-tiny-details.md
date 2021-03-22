@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The importance of tiny details
-tags: [ job search, python, pep8, formatting ]
+tags: jobsearch, python, pep8, formatting
 author: carlos
 ---
 
