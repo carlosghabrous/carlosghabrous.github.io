@@ -194,8 +194,7 @@ header {
     .about-me__img {
         grid-area: img; 
         position: relative; 
-        background: pink;
-        
+        max-width: 450px
     }
 }
 
