@@ -5,12 +5,18 @@ layout: default
     <h2 class="section__title">{{ page.title }}</h2>
     <p class="blog_post--meta">{{ page.date | date_to_string }} - {{ page.author }}</p>
     
-    <span>[
+    {% if page.tags > 0 %}
+    <span>
+        tags: [
         {% for tag in page.tags %}
           {% capture tag_name %}{{ tag }}{% endcapture %}
-          <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+          <!-- <a href="/tag/{{ tag_name }}"> -->
+            <code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;
+          <!-- </a> -->
         {% endfor %}
       ]</span>
+
+    {% endif %}
 
 
     <section class="section__subtitle--post">
