@@ -75,7 +75,7 @@ files       = request.FILES.getlist(‘dsr_files’)
 
 Just out of curiosity, I used VS Editor and autopep8 on this file, and after the formatter did its job, the previous lines looked like this: 
 
-{% highlight python %}
+```python
  from rest_framework import viewsets
 
 from django.core import serializers as core_serializers
@@ -93,7 +93,7 @@ from .forms import SelectDsrsFileForm
 form_class = SelectDsrsFileForm
 template_name = 'dsrs/upload-dsrs.html'
 success_url = 'success/'
-{% endhighlight %}
+```
 
 As one could expect, nothing dramatically different from one example to the next one. But even they claimed “We'll never reject a candidate for this, but these tiny details help us to see how we worked with Python before.”, it seems a bit suspicious that they mentioned it at all. In any case, kudos to the company for replying to my questions and explaining why they decided to not move forward: in my experience, most people won't bother on explaining anything, and these guys prove not to be hearless robots but human beings, even if they gave me the finger. 
 
