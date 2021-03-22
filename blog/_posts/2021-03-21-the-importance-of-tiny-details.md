@@ -50,7 +50,7 @@ OK, I agree with the second didn’t like, which I would say it is the most impo
 But I honestly didn’t expect the coding style. I didn’t use a formatting tool this time, but since I am familiar with PEP8, it didn’t cross my mind style would be a problem. 
 Now, I know that I don’t follow PEP8 100%, and I do things like this: 
 
-{% highlight python %}
+```python
 from rest_framework             import viewsets
 
 from django.core                import serializers as core_serializers
@@ -63,7 +63,7 @@ from django.shortcuts           import render
 
 from .                          import models, serializers, utils
 from .forms                     import SelectDsrsFileForm
-{% endhighlight %}
+```
 
 See how everything is aligned around the “import” keyword? To me, this not only looks nicer, but improves readability. The same happens if some variables are defined one after the other, like:  
 
