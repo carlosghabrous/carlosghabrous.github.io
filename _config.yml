@@ -8,6 +8,7 @@ defaults:
       path: ""
       type: "posts"
     values:
+      path: "blog"
       author: "carlos"
       layout: "post"
       comments: true  # add comments to all blog posts
