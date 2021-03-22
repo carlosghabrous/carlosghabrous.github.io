@@ -9,3 +9,5 @@ defaults:
       comments: true  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
       
+paginate: 5
+paginate_path: "/blog/page:num"
