@@ -5,7 +5,6 @@ layout: default
     <h2 class="section__title">{{ page.title }}</h2>
     <p class="blog_post--meta">{{ page.date | date_to_string }} - {{ page.author }}</p>
     
-    {% if page.tags > 0 %}
     <span>
         tags: [
         {% for tag in page.tags %}
@@ -15,9 +14,6 @@ layout: default
           <!-- </a> -->
         {% endfor %}
       ]</span>
-
-    {% endif %}
-
 
     <section class="section__subtitle--post">
         {{ content }}
