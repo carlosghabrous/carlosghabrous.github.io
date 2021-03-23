@@ -1,0 +1,26 @@
+.nav {
+    position: absolute;
+    right: 3em;
+} 
+
+.nav__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    float: right;
+} 
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    margin: .5em;
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+}
