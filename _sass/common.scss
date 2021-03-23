@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom properties */
+
+:root {
+    /*TODO: Have a look to other fonts for regular text */
+    --ff-primary: 'Courier New', Courier;
+    --ff-secondary: 'Source Code Pro', monospace;
+    --ff-posts: 'Helvetica';
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #3bbbe6;
+
+    --fs-h1: 3rem; 
+    --fs-h2: 2.25rem; 
+    --fs-post-title: 1.75rem;
+    --fs-h3: 1.25rem; 
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rbga(0,0,0,.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
