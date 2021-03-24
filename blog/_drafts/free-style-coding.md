@@ -68,5 +68,62 @@ Running command init with arguments [argument]
 
 ## Refactor 2: Move command-related stuff into its own package
 So, I have created the package... wait for it... _commands_! That sits on its own directory:
+--- add screenshot here
+Package _commands_ implements the type I defined before plus two more that represent the commands I have so far:
+```go
+package commands
+
+import "fmt"
+
+type FirstStoneCommand struct {
+	CmdName string
+}
+
+func (fsCmd FirstStoneCommand) Run(cmdFlagsSubs ...string) {
+	fmt.Printf("Running command %v with arguments %v\n", fsCmd.CmdName, cmdFlagsSubs)
+}
+
+type InitCommand FirstStoneCommand
+
+func (initCmd InitCommand) Run(cmdFlagsSubs ...string) {
+	fmt.Printf("Running init command with args %v\n", cmdFlagsSubs)
+}
+
+type HelpCommand FirstStoneCommand
+
+func (helpCmd HelpCommand) Run(cmdFlagsSubs ...string) {
+	fmt.Printf("Running help command with args %v\n", cmdFlagsSubs)
+}
+```
+
+The main package needs to be changed accordingly: 
+```go
+
+var commandsRegistry = make(map[string]commands.FirstStoneCommand)
+
+func init() {
+	commandsRegistry["init"] = commands.FirstStoneCommand(commands.InitCommand{CmdName: "init"})
+	commandsRegistry["help"] = commands.FirstStoneCommand(c
+    commands.HelpCommand{CmdName: "help"})
+}
+
+```
+But notice a cast is needed to allow inserting commands in a map. If we are attempting some kind of polymorphism (I would like to use the commands all the same regardless of the specificity of each one), this smells bad already. 
+
+# Refactor #3: Polymorphism
+To solve this, I have refactor commands. _FirstStoneCommand_ becomes a struct _firstStoneCommand_ (private), and there is now an interface that exposes the type's behaviour, _FirstStoneCommand_. I have also created a new type per command and specialized their behaviours. 
+The main package's init function looks like this now: 
+```go
+func init() {
+	var c commands.FirstStoneCommand
+
+	c = commands.NewInitCmd()
+	commandsRegistry[c.CmdName()] = c
+
+	c = commands.NewHelpCmd()
+	commandsRegistry[c.CmdName()] = c
+}
+```
+
 
 
