@@ -3,12 +3,6 @@ img {
     max-width: 50%;
 }
 
-hr {
-    opacity: 0.2;
-    position: relative;
-    bottom: 3em;
-}
-
 
 footer {
     text-align: center;
@@ -23,15 +17,6 @@ footer {
     font-size: var(--fs-h3);
     padding: .25em 1em;
     margin-bottom: 1em;
-}
-
-
-/* Header */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
 }
 
 /* About me */
