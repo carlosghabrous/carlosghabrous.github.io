@@ -19,111 +19,68 @@ Refactoring, top-down approach
   -- via plug-in package
   -- can init functions do it? For example, by using a main package variable (map)
 # Refactor 1: Simplify main function
-Clearly, the main function should just get the command from the command line, and let it do the job. I don't know yet how I am going to do it, but I would like it to look like this: 
+Clearly, it is not a good idea to put everything in the main function/package. Ideally, commands should be registered before running the main function, which I would like to do something like this:
 ```go
+package main
+
+import (
+	"github.com/carlosghabrous/firststone/commands"
+)
+
 func main() {
-	if len(os.Args) < minimumArgumentsNumber {
-		fmt.Println("Missing command!")
-		commandsRegistry["help"].run()
-		os.Exit(1)
-	}
-
-	commandName := os.Args[1]
-	command, ok := commandsRegistry[commandName]
-
-	if !ok {
-		fmt.Printf("Unknown command %v\n", commandName)
-		commandsRegistry["help"].run()
-		os.Exit(1)
-	}
-
-	command.run(os.Args[2:]...)
-```
-
-Here, _commandRegistry_ is some data structure where commands are, well, registered. For now, let it be a map that gets populated in the main's package _init_ function:
-```go
-type FirstStoneCommand struct {
-	cmdName string
-}
-
-func (fsCmd FirstStoneCommand) run(cmdFlagsSubs ...string) {
-	fmt.Printf("Running command %v\n", fsCmd.cmdName)
-}
-
-var commandsRegistry = make(map[string]FirstStoneCommand)
-
-func init() {
-	commandsRegistry["init"] = FirstStoneCommand{cmdName: "init"}
-	commandsRegistry["help"] = FirstStoneCommand{cmdName: "help"}
+	commands.Run()
 }
 ```
-In order to make the code compile, I have added defined the _FirstStoneCommand_ datatype. Variables of this type are able to invoke a method _run_, that executes the given command. The idea is to move this into a package of its own, and expand it to implement the desired functionality. 
 
-But at least the main function has been simplified and cleaned up a great deal!
-The result of running a known command is now: 
-```
-go run . init argument
-Running command init with arguments [argument]
-```
+I have no idea how I am going to achieve this at this point, but let's continue and see what happens. 
 
-## Refactor 2: Move command-related stuff into its own package
-So, I have created the package... wait for it... _commands_! That sits on its own directory:
---- add screenshot here
-Package _commands_ implements the type I defined before plus two more that represent the commands I have so far:
+# Refactor 2: Commands package
+The main package now imports the commands package, that should have a function to run some kind of "main" command.
 ```go
 package commands
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
-type FirstStoneCommand struct {
-	CmdName string
-}
+var mainCommand = commands.Command()
 
-func (fsCmd FirstStoneCommand) Run(cmdFlagsSubs ...string) {
-	fmt.Printf("Running command %v with arguments %v\n", fsCmd.CmdName, cmdFlagsSubs)
-}
-
-type InitCommand FirstStoneCommand
-
-func (initCmd InitCommand) Run(cmdFlagsSubs ...string) {
-	fmt.Printf("Running init command with args %v\n", cmdFlagsSubs)
-}
-
-type HelpCommand FirstStoneCommand
-
-func (helpCmd HelpCommand) Run(cmdFlagsSubs ...string) {
-	fmt.Printf("Running help command with args %v\n", cmdFlagsSubs)
+func Run() {
+	err := mainCommand.Run()
+	if err != nil {
+		fmt.Printf("Error while running the command: %v\n", err)
+		os.Exit(1)
+	}
 }
 ```
-
-The main package needs to be changed accordingly: 
+_mainCommand_ is a variable of type Command, which I have not defined yet, so I guess I should initialize it with some values, like the commands' name, help message etc. Upon reading about the 'if' statements in go, I realized I can re-write the previous one in a more concised manner: 
 ```go
-
-var commandsRegistry = make(map[string]commands.FirstStoneCommand)
-
-func init() {
-	commandsRegistry["init"] = commands.FirstStoneCommand(commands.InitCommand{CmdName: "init"})
-	commandsRegistry["help"] = commands.FirstStoneCommand(c
-    commands.HelpCommand{CmdName: "help"})
-}
-
+if err := mainCommand.Run(); err != nil {
+		fmt.Printf("Error while running the command: %v\n", err)
+		os.Exit(1)
+	}
 ```
-But notice a cast is needed to allow inserting commands in a map. If we are attempting some kind of polymorphism (I would like to use the commands all the same regardless of the specificity of each one), this smells bad already. 
 
-# Refactor #3: Polymorphism
-To solve this, I have refactor commands. _FirstStoneCommand_ becomes a struct _firstStoneCommand_ (private), and there is now an interface that exposes the type's behaviour, _FirstStoneCommand_. I have also created a new type per command and specialized their behaviours. 
-The main package's init function looks like this now: 
+Now, let's define the command type. I guess this could be as complex as anybody would want it to be, but I will add the bare minimum in a new file _abstractCommand_, where I will define the types and interfaces.
+_abstractCommand_ looks like this now:
+
 ```go
-func init() {
-	var c commands.FirstStoneCommand
+package commands
 
-	c = commands.NewInitCmd()
-	commandsRegistry[c.CmdName()] = c
+type Command struct {
+	Name string
+}
 
-	c = commands.NewHelpCmd()
-	commandsRegistry[c.CmdName()] = c
+type Commander interface {
+	Execute()
+	AddCmd(cmd Command)
+}
+
+func (cmd *Command) Execute() error {
+	cmd.executeCommand()
+	return nil
 }
 ```
-
-
+I know, it does nothing at all, but I just want to define types and interfaces so that the code can be compiled. 
 
