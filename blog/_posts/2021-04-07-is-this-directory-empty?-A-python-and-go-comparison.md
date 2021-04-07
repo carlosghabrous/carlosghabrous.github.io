@@ -54,10 +54,7 @@ What about the Python implementation? In my head, such simple test should requir
 ```python
 import os
 def is_dir_empty(dir_name):
-    if not os.listdir(dir_name):
-        return True
-
-    return False
+    return len(os.listdir(dir_name)) == 0
 ```
 
 The _listdir_ function in the _os_ package returns an empty list if the directory is empty, and a list containing the names of the entries in the given directory. 
