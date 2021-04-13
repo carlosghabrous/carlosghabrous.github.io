@@ -15,15 +15,21 @@ body {
     font-family: var(--ff-primary);
     color: var(--fc-side_bar);
     grid-area: "side-bar";
-  
-  display:  flex;
-  flex-direction:  column;
+    padding: 2em 1.5em;
+    display:  flex;
+    flex-direction:  column;
 }
 
 .side__bar--item--title,
 side__bar--item--subtitle {
   font-weight: var(--fw-bold);
 }
+
+
+.right-side {
+  padding: 2em 1.5em;
+}
+
 
 .experience-achievements {
     grid-area: "experience";
